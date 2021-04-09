@@ -158,14 +158,15 @@ function bigOrSmall (arr){
 */
 
 //CODE HERE
+let arr=[];
 function arrayReverser (arr) {
   let reversed = [];
-    for (var i = 0, j = arr.length - 1; i < arr.length; i++, j--) {      
-        reversed[i] = arr[j];
-    }   
+    for(let i = arr.length - 1; i >= 0; i--){
+      reversed.push(arr[i])
+    }
+    
     return reversed;
 }
-arrayReverser();
 //////////////////PROBLEM 14////////////////////
 
 let global = 'cool string'
@@ -239,8 +240,9 @@ function isItBob (object, callback){
 
 //CODE HERE
 function giveMeDoubles (array, callback){
-  for (let i = array[0]; i=>0; i++){
-    array.splice(array[i],1, array[i]*2)
+  for (let i = array.length-1; i>=0; i--){
+    console.log(i)
+     array.splice(i,1, array[i]*2)
   }
   callback(array)
 }
