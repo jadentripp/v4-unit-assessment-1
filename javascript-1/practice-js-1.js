@@ -21,7 +21,7 @@ let lovesCode = true;
 
 //CODE HERE
 function sum (num1, num2){
-  return num1*num2;
+  return num1+num2;
 }
 //////////////////PROBLEM 5////////////////////
 /*
@@ -33,13 +33,15 @@ function sum (num1, num2){
 
 //CODE HERE
 function trueOrFalse (data){
-  if (data===true) {
+  console.log(data)
+  if (data) {
     return true;
   }
-  else{
+   else {
     return false;
   }
 }
+
 //////////////////PROBLEM 6////////////////////
 /*
   Create a function called 'oddChecker' that takes in one parameter, 'num'. 
@@ -133,18 +135,18 @@ let me = {
 */
 
 // CODE HERE
-// function bigOrSmall (arr){
-//   let answers = [];
-//   for (let i=arr[0]; i>=0; i++) {
-//     if(arr[i]>100){
-//       answers.push('big')
-//     }
-//     else if(arr[i]<=100){
-//       answers.push('small')
-//     }
-//   }
-//   return answers
-// }
+function bigOrSmall (arr){
+  let answers = [];
+  for (let i= 0; i<arr.length; i++) {
+    if(arr[i]>100){
+      answers.push('big')
+    }
+    else{
+      answers.push('small')
+    }
+  }
+  return answers
+}
 //////////////////PROBLEM 13////////////////////
 /* 
   Create a function called 'arrayReverser' that takes in one parameter, 'arr'. 
@@ -158,11 +160,12 @@ let me = {
 //CODE HERE
 function arrayReverser (arr) {
   let reversed = [];
-  for (let i = arr.length-1; i>=0; i--){
-    reversed.unshift(arr[i])
-  }
-  return reversed
+    for (var i = 0, j = arr.length - 1; i < arr.length; i++, j--) {      
+        reversed[i] = arr[j];
+    }   
+    return reversed;
 }
+arrayReverser();
 //////////////////PROBLEM 14////////////////////
 
 let global = 'cool string'
@@ -219,11 +222,11 @@ function firstItem (array, callback){
 
 //CODE HERE
 function isItBob (object, callback){
-  if (object.name==='Bob'){
-    return true;
+  if (object.name!=="Bob"){
+    callback(false);
   }
   else {
-    return false;
+    callback(true);
   }
 }
 
@@ -235,7 +238,7 @@ function isItBob (object, callback){
 */
 
 //CODE HERE
-function givesMeDoubles (array, callback){
+function giveMeDoubles (array, callback){
   for (let i = array[0]; i=>0; i++){
     array.splice(array[i],1, array[i]*2)
   }
